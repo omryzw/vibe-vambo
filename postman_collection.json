@@ -1,0 +1,189 @@
+{
+  "info": {
+    "name": "African Language Translator API",
+    "description": "Collection for testing the African language translation API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Languages",
+      "description": "Endpoints for managing languages",
+      "item": [
+        {
+          "name": "Get All Languages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/languages",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "languages"]
+            },
+            "description": "Retrieve all supported languages"
+          }
+        },
+        {
+          "name": "Get Language by Code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/languages/sw",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "languages", "sw"]
+            },
+            "description": "Retrieve a specific language by its code"
+          }
+        },
+        {
+          "name": "Create Language",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"sw\",\n  \"name\": \"Swahili\",\n  \"region\": \"East Africa\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/languages",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "languages"]
+            },
+            "description": "Add a new language to the system"
+          }
+        },
+        {
+          "name": "Update Language",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"sw\",\n  \"name\": \"Swahili\",\n  \"region\": \"East Africa\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/languages/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "languages", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "language_id_here",
+                  "description": "ID of the language to update"
+                }
+              ]
+            },
+            "description": "Update an existing language"
+          }
+        },
+        {
+          "name": "Delete Language",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/languages/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "languages", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "language_id_here",
+                  "description": "ID of the language to delete"
+                }
+              ]
+            },
+            "description": "Delete a language (soft delete)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Translations",
+      "description": "Endpoints for translation operations",
+      "item": [
+        {
+          "name": "Translate Text",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sourceText\": \"Hello, how are you?\",\n  \"sourceLanguageCode\": \"en\",\n  \"targetLanguageCode\": \"sw\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/translations/translate",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "translations", "translate"]
+            },
+            "description": "Translate text from one language to another using ChatGPT"
+          }
+        },
+        {
+          "name": "Get Translation History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/translations/history",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "translations", "history"]
+            },
+            "description": "Get the user's translation history"
+          }
+        },
+        {
+          "name": "Get Translation by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/translations/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "translations", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "translation_id_here",
+                  "description": "ID of the translation to retrieve"
+                }
+              ]
+            },
+            "description": "Get a specific translation by ID"
+          }
+        }
+      ]
+    }
+  ]
+} 

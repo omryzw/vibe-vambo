@@ -1,0 +1,52 @@
+[
+  {
+    "code": "sw",
+    "name": "Swahili",
+    "region": "East Africa"
+  },
+  {
+    "code": "am",
+    "name": "Amharic",
+    "region": "East Africa"
+  },
+  {
+    "code": "ha",
+    "name": "Hausa",
+    "region": "West Africa"
+  },
+  {
+    "code": "yo",
+    "name": "Yoruba",
+    "region": "West Africa"
+  },
+  {
+    "code": "zu",
+    "name": "Zulu",
+    "region": "Southern Africa"
+  },
+  {
+    "code": "xh",
+    "name": "Xhosa",
+    "region": "Southern Africa"
+  },
+  {
+    "code": "ar",
+    "name": "Arabic",
+    "region": "North Africa"
+  },
+  {
+    "code": "fr",
+    "name": "French",
+    "region": "West Africa"
+  },
+  {
+    "code": "pt",
+    "name": "Portuguese",
+    "region": "Southern Africa"
+  },
+  {
+    "code": "en",
+    "name": "English",
+    "region": "Multiple Regions"
+  }
+] 
